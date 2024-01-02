@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Arial', sans-serif; */
+}
+
+.slide {
+    display: none;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    background: url('images/abstract-colorful-sales-background-concept_250207-246.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-color: #333; */
+    position: relative;
+}
+
+.container {
+    height: 100%;
+}
+
+.container img {
+    width: 200px;
+    height: 200px;
+    pointer-events: none;
+    max-height: 400px;
+    max-width: 100%;
+    margin-right: auto;
+    margin-top: 20px;
+    box-shadow: rgb(51, 51, 51) 0px 15px 30px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-image: initial;
+    border-radius: 50%;
+}
+
+#slide1 {
+    display: block;
+}
+
+.slide h1 {
+    padding: 20px  0;
+    margin: 0;
+}
+
+.text-box-information {
+    color: #fff;
+    background: transparent;
+    opacity: 1;
+    backdrop-filter: blur(10px);
+    border: 5px solid transparent;
+    width: 90%;
+    height: fit-content;
+    max-height: 60%;
+    margin: auto;
+    overflow: scroll;
+}
+
+.text-box-information::-webkit-scrollbar {
+    width: 0em;
+}
+
+.text-box-information::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.text-box {
+    color: black;
+}
+
+.text-box h2 {
+    font-size: 42px;
+    padding-top: 25px;
+}
+
+.text-box h3 {
+    display: flex;
+    border: 1px solid #fff;
+    padding: 10px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.information {
+    text-align: start;
+}
+
+.information::-webkit-scrollbar {
+    width: 0em;
+}
+
+.information::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.information li {
+    font-family: 'Work sans', sans-serif;
+    font-size: 25px;
+    list-style: none;
+    letter-spacing: 2px;
+}
+
+.information li::before {
+    content: '\21E8';
+}
+
+.information li:nth-child(3),
+.information li:nth-child(4) {
+    font-size: 25px;
+}
+
+.information li:first-child {
+    margin-top: 20px;
+}
+
+.information li:last-child {
+    margin-bottom: 80px;
+}
+
+.information li:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.button-container {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: right;
+}
+
+.next-button, .prev-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px 20px 0 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}

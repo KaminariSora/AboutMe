@@ -1,104 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AboutMe</title>
-    <style>
-        body {
-            font-family: 'Courier New', Courier, monospace;
-            display: flex;
-            justify-content: center;
-            align-items: start;
-            background-image: url('images/images\ \(18\).jpeg');
-            background-repeat: repeat;
-            background-size: cover;
-            background-color: #333;
-            color: aliceblue;
-        }
-
-        h1,h4 {
-            text-align: center;
-        }
-
-        h4 {
-            text-align: start;
-            margin: 1px;
-        }
-
-        img {
-            margin-left: 50%;
-            transform: translate(-50%);
-            height: 200px;
-            width: 200px;
-            border: 2px solid black;
-            border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
-        }
-
-        video {
-            display: flex;
-            width: 500px;
-            height: auto;
-        }
-
-        a {
-            margin-left: 20px ;
-            margin-right: 20px;
-            display: block;
-            text-align: center;
-            border: 2px solid black;
-            background-color: #fff;
-            color: black;
-            text-decoration: none;
-        }
-
-        table {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-        }
-
-        .container {
-            padding: 10px;
-            background-color: transparent;
-            opacity: 1;
-            box-shadow: 1px 10px 10px 10px #333;
-            backdrop-filter: blur(5px);
-        }
-    </style>
+    <title>About me</title>
+    <link rel="stylesheet" href="AboutMe.css">
+    <link rel="stylesheet" href="toggle.css">
 </head>
+
 <body>
-    <div class="container">
-        <img src="images/525558.jpg" alt="">
-        <h1>Hello!<br> My name is Thunder.</h1>
-        <table>
-            <tbody>
-                <tr>
-                    <td>I love snack</td>
-                    <td>
-                        <img src="images/1679258388192.webp" class="picture" alt="" width="120px" height="120px">
-                    </td>
-                </tr>
-                <tr>
-                    <td>I love genshin impact.</td>
-                    <td>
-                        <img src="images/1672135006506.jpg" class="picture" alt="" width="120px" height="120px">
-                    </td>
-                </tr>
-                <tr>
-                    <td>I love coding.</td>
-                    <td>
-                        <img src="images/image_big_5d49435fe6327.webp" class="picture" alt="" width="120px" height="120px">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <h2>I'm hungry! <br> Let's find something to eat!</h2>
-        <a href="https://www.google.co.th/?hl=th">Click me to find some food</a>
-        <video controls>
-            <source src="images/Ayaka 49k x 20.mp4" type="video/mp4">
-        </video>
+
+    
+    <div id="slide1" class="slide">
+        <h1>Slide 1</h1>
+        <div class="button-container">
+            <button class="next-button" onclick="changeSlide(2)">Next</button>
+        </div>
     </div>
+    <div id="slide2" class="slide">
+        <div class="container">
+            <img src="images/525558.jpg" alt="">
+            <div class="text-box-information">
+                <ul class="information">
+                    <li class="first-name"><b>Name</b> : Nonthacha</li>
+                    <li class="last-name"><b>Last name</b> : Huanchitt</li>
+                    <li class="nickname"><b>Nickname</b> : Thunder</li>
+                    <li class="age"><b>Age</b> : 19</li>
+                    <li class="national"><b>Nationality</b> : Thai</li>
+                    <li class="education"><b>Education</b> : Undergraduate at Srinakharinwirot U.</li>
+                    <li class="talent"><b>Talent</b> : Working as team, socializing and conversing with people,
+                        swimming, drawing etc.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="button-container">
+            <label class="switch">
+                <input type="checkbox" id="togBtn">
+                <div class="slider round">
+                    <span language='thai' class="on">TH</span>
+                    <span language='english' class="off">ENG</span>
+                </div>
+            </label>
+            <button class="prev-button" onclick="changeSlide(1)">Previous</button>
+        </div>
+    </div>
+
+    <script>
+        function changeSlide(slideNumber) {
+            document.getElementById('slide1').style.display = 'none';
+            document.getElementById('slide2').style.display = 'none';
+
+            document.getElementById('slide' + slideNumber).style.display = 'block';
+        }
+    </script>
+    <script src="language.js"></script>
 </body>
+
 </html>
