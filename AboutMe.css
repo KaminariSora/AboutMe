@@ -1,7 +1,8 @@
 body {
     margin: 0;
     padding: 0;
-    /* font-family: 'Arial', sans-serif; */
+    font-family: 'Work sans', sans-serif;
+    /* overflow: hidden; */
 }
 
 .slide {
@@ -22,8 +23,8 @@ body {
 }
 
 .container img {
-    width: 200px;
-    height: 200px;
+    width: 400px;
+    height: 400px;
     pointer-events: none;
     max-height: 400px;
     max-width: 100%;
@@ -35,6 +36,7 @@ body {
     border-color: rgb(255, 255, 255);
     border-image: initial;
     border-radius: 50%;
+    animation: fadeIn 2s;
 }
 
 #slide1 {
@@ -47,16 +49,17 @@ body {
 }
 
 .text-box-information {
-    color: #fff;
-    background: transparent;
-    opacity: 1;
-    backdrop-filter: blur(10px);
-    border: 5px solid transparent;
-    width: 90%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #333;
+    background: #fff;
+    width: 80%;
     height: fit-content;
-    max-height: 60%;
+    max-height: 100%;
     margin: auto;
     overflow: scroll;
+    border-radius: 20px;
 }
 
 .text-box-information::-webkit-scrollbar {
@@ -98,7 +101,6 @@ body {
 }
 
 .information li {
-    font-family: 'Work sans', sans-serif;
     font-size: 25px;
     list-style: none;
     letter-spacing: 2px;
@@ -108,13 +110,8 @@ body {
     content: '\21E8';
 }
 
-.information li:nth-child(3),
-.information li:nth-child(4) {
-    font-size: 25px;
-}
-
 .information li:first-child {
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .information li:last-child {
@@ -125,19 +122,71 @@ body {
     margin-bottom: 15px;
 }
 
-.button-container {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    text-align: right;
+.text-box-information,
+.information {
+    /* position: relative;
+    top: -50%; */
+    opacity: 1;
+    /* animation: fadeIn 1s; */
 }
 
-.next-button, .prev-button {
-    background-color: #4CAF50;
+.button-container {
+    position: relative;
+    top: -15%;
+    width: 100%;
+    height: 10%;
+    text-align: right;
+    z-index: 100;
+}
+
+.next-button,
+.prev-button {
+    position: absolute;
+    right: 0;
+    /* top: -15px; */
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    animation: movement 2s;
+    animation-iteration-count: infinite;
+}
+
+.next-button img,
+.prev-button img {
+    width: 100px;
+    height: 100px;
+    filter: brightness(10px);
+}
+
+.prev-button {
+    background-color: transparent;
     color: white;
     padding: 10px 20px;
     margin: 5px 20px 0 0;
     cursor: pointer;
     border: none;
     border-radius: 5px;
+}   
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes movement {
+    from {
+        top: 30px;
+    }
+    50% {
+        top: 15px;
+    }
+    100% {
+        top: 30px;
+    }
 }

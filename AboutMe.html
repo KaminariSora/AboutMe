@@ -2,26 +2,91 @@
 <html lang="en">
 
 <head>
+    <link rel="Website icon" type="png" href="images/—Pngtree—letter k logo png design_6820200.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About me</title>
     <link rel="stylesheet" href="AboutMe.css">
     <link rel="stylesheet" href="toggle.css">
+    <link rel="stylesheet" href="carousel.css">
+    <link rel="stylesheet" href="slide3.css">
 </head>
 
 <body>
 
     
     <div id="slide1" class="slide">
-        <h1>Slide 1</h1>
+        <h1 class="welcome">Welcome To</h1>
+        <h1 class="KaminariSora">KaminariSora's Portfolio</h1>
+        <div class="carousel">
+            <canvas id="stars"></canvas>
+            <div class="carousel-item">
+                <div class="carousel-box">
+                    <img src="self/525562.jpg" />
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="carousel-box">
+                    <img src="self/525561.jpg" />
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="carousel-box">
+                    <img src="self/525559.jpg" />
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="carousel-box">
+                    <img src="self/525560.jpg" />
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="carousel-box">
+                    <img src="self/525558.jpg" />
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="carousel-box">
+                    <img src="self/525557.jpg" />
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="carousel-box">
+                    <img src="self/525563.jpg" />
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="carousel-box">>
+                    <img src="self/525564.jpg" />
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="carousel-box">
+                    <img src="self/525565.jpg" />
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-box">
+                    <img src="self/525566.jpg" />
+                </div>
+            </div>
+        </div>
         <div class="button-container">
-            <button class="next-button" onclick="changeSlide(2)">Next</button>
+            <button class="next-button" onclick="changeSlide(2)"><img src="light arrow.png" alt=""></button>
         </div>
     </div>
     <div id="slide2" class="slide">
         <div class="container">
-            <img src="images/525558.jpg" alt="">
             <div class="text-box-information">
+                <img src="self/525566.jpg" alt="">
                 <ul class="information">
                     <li class="first-name"><b>Name</b> : Nonthacha</li>
                     <li class="last-name"><b>Last name</b> : Huanchitt</li>
@@ -30,32 +95,66 @@
                     <li class="national"><b>Nationality</b> : Thai</li>
                     <li class="education"><b>Education</b> : Undergraduate at Srinakharinwirot U.</li>
                     <li class="talent"><b>Talent</b> : Working as team, socializing and conversing with people,
-                        swimming, drawing etc.
-                    </li>
+                        swimming, drawing etc.</li>
                 </ul>
             </div>
         </div>
         <div class="button-container">
             <label class="switch">
-                <input type="checkbox" id="togBtn">
+                <input type="checkbox" id="togBtn" class="togBtn">
                 <div class="slider round">
                     <span language='thai' class="on">TH</span>
                     <span language='english' class="off">ENG</span>
                 </div>
             </label>
-            <button class="prev-button" onclick="changeSlide(1)">Previous</button>
+            <button class="next-button" onclick="changeSlide(3)"><img src="light arrow.png" alt=""></button>
+        </div>
+    </div>
+    <div id="slide3" class="slide">
+        <!-- <h1>Slide 3</h1> -->
+        <div class="wrapper" id="wrapper1">
+            <div class="content"></div>
+            <div class="content"></div>
+            <div class="content"></div>
+            <button class="page-button" onclick="changeView('wrapper2')"><img src="light arrow.png" alt=""></button>
+        </div>
+        <div class="wrapper" id="wrapper2">
+            <div class="content"></div>
+            <div class="content"></div>
+            <div class="content"></div>
+            <button class="reset-button" onclick="changeSlide(1)"><img src="light arrow.png" alt=""></button>
+        </div>
+        <div class="button-container">
+            <label class="switch">
+                <input type="checkbox" id="togBtn" class="togBtn2">
+                <div class="slider round">
+                    <span language='thai' class="on">TH</span>
+                    <span language='english' class="off">ENG</span>
+                </div>
+            </label>
+            
         </div>
     </div>
 
     <script>
+        function changeView(wrapperName) {
+            const target = document.getElementById(wrapperName)
+
+            if(wrapperName) {
+                target.scrollIntoView({behavior : "smooth"})
+            }
+        }
+
         function changeSlide(slideNumber) {
             document.getElementById('slide1').style.display = 'none';
             document.getElementById('slide2').style.display = 'none';
+            document.getElementById('slide3').style.display = 'none';
 
             document.getElementById('slide' + slideNumber).style.display = 'block';
         }
     </script>
     <script src="language.js"></script>
+    <script src="carousel.js"></script>
 </body>
 
 </html>

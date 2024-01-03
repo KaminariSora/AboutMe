@@ -1,4 +1,5 @@
-document.querySelector('#togBtn').addEventListener('input', updateInformation);
+document.querySelector('.togBtn').addEventListener('input', updateInformation);
+document.querySelector('.togBtn2').addEventListener('input', updateInformation);
 
 const data = {
     "english": {
